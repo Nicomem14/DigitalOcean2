@@ -51,17 +51,17 @@ runcmd:
   ]
 }
 
-function createDroplet() {
+async function createDroplet() {
 
-  client.droplets.create(DropletData, (err, droplet) => {
-    console.log(droplet["name"]);//
-  }).then((droplet) => {
+  const dropletPromise = await client.droplets.create(DropletData, (err, droplet) => {
+    return dropletPromise;//
+  })/**.then((droplet) => {
     return { "name": droplet["name"], "id": droplet["id"] }
   }).catch((err) => {
     console.error("FALLE", err);
-  })
+  })*/
 }
-
+console.log("Promise:", dropletPromise);
 
 /** function createDroplet() {
   let pp = client.droplets.create(DropletData, funct).then(getDropletInfo).catch(errorCOntrol);
@@ -82,8 +82,9 @@ function errorControl(err) {
 }
 */
 
-
-createDroplet();
+const a = await createDroplet();
 module.exports = {
   createDroplet, getAllDroplets
 }
+
+console.log(a)

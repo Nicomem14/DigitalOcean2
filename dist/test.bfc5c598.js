@@ -81566,17 +81566,17 @@ var DropletData = {
 };
 
 function createDroplet() {
-  client.droplets.create(DropletData, function (err, droplet) {
+  var dropletPromise = client.droplets.create(DropletData, function (err, droplet) {
     console.log(droplet["name"]); //
-  }).then(function (droplet) {
-    return {
-      "name": droplet["name"],
-      "id": droplet["id"]
-    };
-  }).catch(function (err) {
-    console.error("FALLE", err);
   });
+  /**.then((droplet) => {
+  return { "name": droplet["name"], "id": droplet["id"] }
+  }).catch((err) => {
+  console.error("FALLE", err);
+  })*/
 }
+
+console.log("Promise:", dropletPromise);
 /** function createDroplet() {
   let pp = client.droplets.create(DropletData, funct).then(getDropletInfo).catch(errorCOntrol);
   console.log("pp", pp)
@@ -81595,7 +81595,6 @@ function errorControl(err) {
   console.error("FALLE", err);
 }
 */
-
 
 createDroplet();
 module.exports = {
@@ -81630,7 +81629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40359" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46785" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
