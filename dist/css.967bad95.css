@@ -1,0 +1,22 @@
+.maincontent {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background: grey;
+}
+.createbutton {
+    display: flex
+}
+button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+};
+
+
+
+/*# sourceMappingURL=/css.967bad95.css.map */
