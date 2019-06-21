@@ -49,6 +49,8 @@
     "stylelint-config-standard": "^18.3.0"
   },
   "dependencies": {
-    "digitalocean": "^1.2.0"
+    "digitalocean": "^1.2.0",
+    "mariadb": "^2.0.5",
+    "sequelize": "^5.8.11"
   }
 }
