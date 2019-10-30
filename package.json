@@ -51,6 +51,6 @@
   "dependencies": {
     "digitalocean": "^1.2.0",
     "mariadb": "^2.0.5",
-    "sequelize": "^5.8.11"
+    "sequelize": "^5.15.1"
   }
 }
